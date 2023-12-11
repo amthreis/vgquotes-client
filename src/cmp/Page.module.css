@@ -1,0 +1,7 @@
+.base {
+    background-color: rgb(87, 48, 42);
+    max-width: 600px;
+    min-height: 200vh;
+
+    margin: auto;
+}
