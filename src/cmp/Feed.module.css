@@ -1,0 +1,12 @@
+.base {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    padding: 0 48px;
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+    margin-top: 16px;
+}

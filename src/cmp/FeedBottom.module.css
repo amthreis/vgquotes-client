@@ -1,0 +1,11 @@
+.base {
+    display: flex;
+    justify-content: center;
+    margin-top: 24px;
+    margin-bottom: 32px;
+}
+
+.text {
+    text-align: center;
+    color: var(--color-text-secundary);
+}

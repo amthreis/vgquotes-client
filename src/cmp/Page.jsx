@@ -1,17 +1,14 @@
-import React from 'react'
-
 import styles from "./Page.module.css";
 import Header from './Header';
 import Feed from './Feed';
 
 const Page = () => {
-  return (
+    return (
     <div className={ styles.base }>
-
-      <Header/>
-      <Feed/>
+        <Header/>
+        <Feed/>
     </div>
-  )
-}
+    );
+};
 
 export default Page;

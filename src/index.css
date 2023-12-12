@@ -1,10 +1,14 @@
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
+  font-family: 'Poppins', sans-serif;
   font-weight: 400;
 
-  color: rgba(255, 255, 255, 1);
-  background-color: #242424;
+  color: rgba(255, 255, 245, .85);
+  background-color: #161618;
+
+  --color-text-primary: rgba(255, 255, 245, .85);
+  --color-text-secundary: gray;
+
+  scroll-behavior: smooth;
 }
 
 * {

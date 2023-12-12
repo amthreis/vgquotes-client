@@ -1,25 +1,27 @@
 .base {
-    height: 54px;
+    height: 60px;
     
     position: relative;
-    background-color: rgb(160, 90, 90);
 }
 
 .fixed {
-    background-color: rgb(5, 5, 5);
+    background-color: rgb(8, 8, 8);
     
-
     position: fixed;
-    width: 600px;
+    width: 700px;
     height: inherit;
 
     display: flex;
     align-items: center;
     justify-content: center;
+
+    border-radius: 0 0 160px 160px;
 }
 
 .button {
     background-color: transparent;
     border: none;
     cursor: pointer;
+
+    transform: translateY(-1px);
 }

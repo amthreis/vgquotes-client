@@ -6,9 +6,9 @@ const Header = () => {
   return (
     <header className={ styles.base } >
         <div className={ styles.fixed } >
-            <button className={ styles.button }>
+            <a href='#top' className={ styles.button }>
                 <img src="./src/assets/icon.png" alt="" width={32} height={32}/>
-            </button>
+            </a>
         </div>
     </header>
   )
