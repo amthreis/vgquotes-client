@@ -1,0 +1,26 @@
+.base {
+    height: 40px;
+    border: none;
+
+    color: var(--color-text-primary);
+    background-color: var(--color-text-tertiary);
+
+    font-family: 'Poppins';
+    font-weight: 600;
+
+    margin: 0 auto;
+    padding: 0 20px;
+    border-radius: 24px;
+    margin-top: 20px;
+
+    cursor: pointer;
+
+    text-transform: uppercase;
+
+    transition: 0.05s ease-in;
+}
+
+.base:hover {
+    color: var(--color-text-tertiary);
+    background-color: var(--color-text-primary);
+}

@@ -7,6 +7,8 @@
 
   --color-text-primary: rgba(255, 255, 245, .85);
   --color-text-secundary: gray;
+  --color-text-tertiary: #505050;
+  --color-text-quaternary: #1b1b1b;
 
   scroll-behavior: smooth;
 }
