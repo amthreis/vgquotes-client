@@ -139,12 +139,11 @@ const Feed = () => {
     }
 
     return (
-    <ul className={ styles.base }>
-        
+    <div className={ styles.base }>
         { newerPosts?.length > 0 && <FeedTop count={ newerPosts.length } max={ MAX_POSTS_UNTIL_REFRESH } onClick={ handleClickNewerPosts }/> } 
-        { posts.map(p => <Post key={ p.id } post={ p } />) }
+        { posts.map(p => <Post key={ `${p.id}_${p.createdAt}` } post={ p } />) }
         <FeedBottom isLoading={isLoadingMore} onSeen={ handleSeen }/>
-    </ul>
+    </div>
     );
 };
 
