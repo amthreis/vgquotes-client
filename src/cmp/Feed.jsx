@@ -11,6 +11,16 @@ import FeedTop from './FeedTop';
 
 const MAX_POSTS_UNTIL_REFRESH = 20;
 
+function getAPI() {
+    //console.log("do")
+    const apis = JSON.parse(import.meta.env.VITE_API);
+
+    if (import.meta.env.VITE_USE_LOCAL_API === undefined || import.meta.env.VITE_USE_LOCAL_API === 'true') return apis[0];
+
+    return apis[1];
+    //console.log(apis);
+}
+
 const Feed = () => {
     const [posts, setPosts] = useState([]);
     const [isLoadingMore, setisLoadingMore] = useState(false);
@@ -18,6 +28,10 @@ const Feed = () => {
     const [oldestDate, setOldestDate] = useState();
     const [newestDate, setNewestDate] = useState();
     const [newerPosts, setNewerPosts] = useState([]);
+
+    useEffect(() => {
+        getAPI();
+    }, []);
 
     useEffect(() => {
         if (newerPosts.length < MAX_POSTS_UNTIL_REFRESH) {
@@ -36,7 +50,7 @@ const Feed = () => {
         //console.log(newestDate)
         if (newestDate === undefined) return;
         
-        const response = await fetch(`${import.meta.env.VITE_API}/newer/${ newestDate.getTime() }`);
+        const response = await fetch(`${ getAPI() }/newer/${ newestDate.getTime() }`);
 
         if (response.status === 200) {
             const result = await response.json();
@@ -72,10 +86,11 @@ const Feed = () => {
 
         setisLoadingMore(true);
 
-        await seconds(2);
+        //await seconds(2);
 
-        const response = await fetch(`${import.meta.env.VITE_API}/older/${ (oldestDate || new Date()).getTime() }`);
+        const response = await fetch(`${ getAPI() }/older/${ (oldestDate || new Date()).getTime() }`);
 
+        console.log(`${ getAPI() }/older/${ (oldestDate || new Date()).getTime() }`);
         //console.log(`http://localhost:3004/older/${ (oldestDate || new Date()).getTime() }`);
 
         if (response.status === 200) {
