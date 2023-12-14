@@ -90,7 +90,7 @@ const Feed = () => {
 
         const response = await fetch(`${ getAPI() }/older/${ (oldestDate || new Date()).getTime() }`);
 
-        console.log(`${ getAPI() }/older/${ (oldestDate || new Date()).getTime() }`);
+        //console.log(`${ getAPI() }/older/${ (oldestDate || new Date()).getTime() }`);
         //console.log(`http://localhost:3004/older/${ (oldestDate || new Date()).getTime() }`);
 
         if (response.status === 200) {
