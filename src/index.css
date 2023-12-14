@@ -11,6 +11,7 @@
   --color-text-quaternary: #1b1b1b;
 
   scroll-behavior: smooth;
+  scrollbar-color: dark;
 }
 
 * {

@@ -36,7 +36,7 @@ const Feed = () => {
         //console.log(newestDate)
         if (newestDate === undefined) return;
         
-        const response = await fetch(`http://localhost:3004/newer/${ newestDate.getTime() }`);
+        const response = await fetch(`${import.meta.env.VITE_API}/newer/${ newestDate.getTime() }`);
 
         if (response.status === 200) {
             const result = await response.json();
@@ -74,7 +74,7 @@ const Feed = () => {
 
         await seconds(2);
 
-        const response = await fetch(`http://localhost:3004/older/${ (oldestDate || new Date()).getTime() }`);
+        const response = await fetch(`${import.meta.env.VITE_API}/older/${ (oldestDate || new Date()).getTime() }`);
 
         //console.log(`http://localhost:3004/older/${ (oldestDate || new Date()).getTime() }`);
 
@@ -118,9 +118,13 @@ const Feed = () => {
     function handleClickNewerPosts() {
         //console.log("add newer");
 
+
         if (newerPosts.length >= MAX_POSTS_UNTIL_REFRESH) {
             window.location.reload();
         } else {
+
+            window.scrollTo(0, 0);
+
             setPosts([...newerPosts, ...posts]);
             setNewerPosts([]);
         }
