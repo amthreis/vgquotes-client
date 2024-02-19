@@ -15,10 +15,12 @@ function getAPI() {
     //console.log("do")
     const apis = JSON.parse(import.meta.env.VITE_API);
 
+    
+
     if (import.meta.env.VITE_USE_LOCAL_API === undefined || import.meta.env.VITE_USE_LOCAL_API === 'true') return apis[0];
 
-    return apis[1];
     //console.log(apis);
+    return apis[1];
 }
 
 const Feed = () => {
@@ -29,9 +31,21 @@ const Feed = () => {
     const [newestDate, setNewestDate] = useState();
     const [newerPosts, setNewerPosts] = useState([]);
 
-    useEffect(() => {
-        getAPI();
-    }, []);
+    // useEffect(() => {
+    //     getAPI();
+
+    //     //doa();
+    // }, []);
+
+    // async function doa() {
+    //     const res = await fetch(`http://localhost:3004/ip`);
+        
+    //     console.log("res",res);
+    //     const r = await res.json();
+
+    //     console.log("r",r);
+    //     console.log("---");
+    // }
 
     useEffect(() => {
         if (newerPosts.length < MAX_POSTS_UNTIL_REFRESH) {
@@ -50,6 +64,8 @@ const Feed = () => {
         //console.log(newestDate)
         if (newestDate === undefined) return;
         
+        console.log("fetch",getAPI());
+
         const response = await fetch(`${ getAPI() }/newer/${ newestDate.getTime() }`);
 
         if (response.status === 200) {
