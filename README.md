@@ -1,5 +1,11 @@
 # VGQuotes - Client
 
+<br/>
+<div align="center">
+  <img align="center" width="640" src="https://i.imgur.com/LUrPn3D.png"/>
+</div>
+<br/>
+
 Frontend of my simple videogame quotes project, done mostly to get a basic social media-like posts queue working. Scroll down to the bottom to fetch older posts, newer posts are automatically fetched each 7s. Made with React.
 
 ## Installation
