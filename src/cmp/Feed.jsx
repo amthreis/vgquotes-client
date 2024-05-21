@@ -104,6 +104,7 @@ const Feed = () => {
 
         //await seconds(2);
 
+        console.log("fetch",getAPI());
         const response = await fetch(`${ getAPI() }/older/${ (oldestDate || new Date()).getTime() }`);
 
         //console.log(`${ getAPI() }/older/${ (oldestDate || new Date()).getTime() }`);

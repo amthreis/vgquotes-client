@@ -13,4 +13,4 @@ VITE_USE_LOCAL_API = false #will fetch from the local if true, remote if false
 
 Then you just need an `npm run dev` to start the server.
 
-Bear in mind that you're gonna need to get the [VGQuotes-API](https://gitlab.com/vgquotes/vgquotes-api) up and running so the client has somewhere to fetch data from.
+Bear in mind that you're gonna need to get the [VGQuotes-API](https://github.com/amthreis/vgquotes-api) up and running so the client has somewhere to fetch data from.
